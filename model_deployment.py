@@ -12,4 +12,4 @@ with open('pickle_model.pkl', 'rb') as file:
 
 predict = model.predict(val)
 
-print(r2_score(y_val, predict))
+print(f'r2 score: {r2_score(y_val, predict)}')
