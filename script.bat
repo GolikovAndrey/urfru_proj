@@ -5,7 +5,6 @@ python data_creation.py
 python data_preprocessing.py
 
 @REM Обучение модели и валидация результатов
-mkdir model
 python model_learning.py
 python model_deployment.py
 
