@@ -1,27 +1,17 @@
 import pickle
 import pandas as pd
 from sklearn.linear_model import SGDRegressor
+from sklearn.metrics import r2_score
 
+train = pd.read_csv('temp_data/train.csv')
 
-train = pd.read_csv(
-    'temp_data/train.csv',
-    delimiter = ','
-)
+y_train = pd.read_csv('temp_data/y_train.csv')
 
+regr = SGDRegressor(tol=.00001, eta0=.1)
 
-y_train = pd.read_csv(
-    'temp_data/y_train.csv',
-    delimiter = ',', 
-    index_col = 'index'
-)
-
-
-regr = SGDRegressor()
-
-
-regr.fit(train, y_train)
-
+regr.fit(train, y_train[['polution']])
+predict = regr.predict(train)
 pkl_filename = 'model/pickle_model.pkl'
 
-with open(pkl_filename, 'wb') as file: 
-    pickle.dump(regr, file) 
+with open(pkl_filename, 'wb') as file:
+    pickle.dump(regr, file)

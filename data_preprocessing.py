@@ -2,22 +2,12 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import MinMaxScaler
 
-train = pd.read_csv(
-    'temp_data\X_train.csv',
-    delimiter = ',', 
-    index_col = 'index'
-)
+train = pd.read_csv('temp_data\X_train.csv')
 
-val = pd.read_csv(
-    'temp_data\X_val.csv', 
-    delimiter = ',', 
-    index_col = 'index'
-)
+val = pd.read_csv('temp_data\X_val.csv')
 
-
-cat_col = [col_name for col_name in train.columns if train[col_name].dtypes == object]
-num_col = [col_name for col_name in train.columns if train[col_name].dtypes != object]
-
+cat_col = ['code', 'id', 'period']
+num_col = ['year']
 
 encoder = OneHotEncoder(drop='first', handle_unknown='ignore', sparse=False)
 min_max_scaler = MinMaxScaler()
@@ -43,5 +33,5 @@ train = train_cat.join(train_norm)
 val = val_cat.join(val_norm)
 
 
-train.to_csv('temp_data/train.csv')
-val.to_csv('temp_data/val.csv')
+train.to_csv('temp_data/train.csv', index=False)
+val.to_csv('temp_data/val.csv', index=False)

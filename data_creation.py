@@ -1,15 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-train = pd.read_csv(
-    'data\dataset.csv', 
-    delimiter = ',', 
-    index_col = 'index'
-)
+train = pd.read_csv('data\dataset.csv')
+train = train[train['Country'] == 'France']
+X_train, X_val, y_train, y_val = train_test_split(train[['year', 'code', 'id', 'period']], train[['polution']], test_size = 0.25, random_state = 42)
 
-X_train, X_val, y_train, y_val = train_test_split(train[['year', 'code', 'id']], train[['polution']], test_size = 0.3, random_state = 42)
-
-X_train.to_csv('temp_data\X_train.csv')
-X_val.to_csv('temp_data\X_val.csv')
-y_train.to_csv('temp_data\y_train.csv')
-y_val.to_csv('temp_data\y_val.csv')
+X_train.to_csv('temp_data\X_train.csv', index=False)
+X_val.to_csv('temp_data\X_val.csv', index=False)
+y_train.to_csv('temp_data\y_train.csv', index=False)
+y_val.to_csv('temp_data\y_val.csv', index=False)
