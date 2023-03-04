@@ -6,7 +6,7 @@ from sklearn.linear_model import SGDRegressor
 val = pd.read_csv('temp_data/val.csv')
 y_val = pd.read_csv('temp_data/y_val.csv')
 
-with open('model/pickle_model.pkl', 'rb') as file: 
+with open('pickle_model.pkl', 'rb') as file: 
     model = pickle.load(file)
 
 
