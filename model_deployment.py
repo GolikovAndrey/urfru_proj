@@ -1,7 +1,6 @@
 import pickle
 import pandas as pd
 from sklearn.metrics import r2_score
-from sklearn.linear_model import SGDRegressor
 
 val = pd.read_csv('temp_data/val.csv')
 y_val = pd.read_csv('temp_data/y_val.csv')
