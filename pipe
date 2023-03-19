@@ -1,13 +1,8 @@
 pipeline {
     agent any
     stages {
-        stage('Remove Temporary Data') {
-            steps {
-               sh 'rm -rf temp_data'
-               sh 'rm -rf data'
-            }
-        }
-        stage('Install modules') {
+        
+        stage('Preparations') {
             steps {
                 sh 'mkdir data'
                 sh 'mkdir temp_data'
@@ -17,26 +12,31 @@ pipeline {
                 
             }
         }
+        
         stage('Data Creation') {
             steps {
                 sh 'python3 data_creation.py '
             }
         }
+        
         stage('Preprocessing') {
             steps {
                sh 'python3 data_preprocessing.py'
             }
         }
+        
         stage('Train') {
             steps {
                 sh 'python3 model_learning.py'
             }
         }
+        
         stage('Predict') {
             steps {
                sh 'python3 model_deployment.py'
             }
         }
+        
         stage('Delete Temporary Data') {
             steps {
                sh 'rm -rf temp_data'
