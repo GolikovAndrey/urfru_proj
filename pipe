@@ -17,12 +17,6 @@ pipeline {
                 
             }
         }
-        stage('Clone repo') {
-            steps {
-                git 'https://github.com/GolikovAndrey/urfru_proj'
-                
-            }
-        }
         stage('Data Creation') {
             steps {
                 sh 'python3 data_creation.py '
