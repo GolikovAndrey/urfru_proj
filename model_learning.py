@@ -12,7 +12,7 @@ regr = SGDRegressor(tol=.00001, eta0=.1)
 
 regr.fit(train, np.ravel(y_train[['polution']]))
 predict = regr.predict(train)
-pkl_filename = 'pickle_model.pkl'
+pkl_filename = 'model_api/pickle_model.pkl'
 
 with open(pkl_filename, 'wb') as file:
     pickle.dump(regr, file)
