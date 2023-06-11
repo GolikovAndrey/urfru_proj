@@ -16,4 +16,9 @@ COPY . .
 RUN pip install --no-cache-dir -r req.txt
 
 # Запускаем сервер при запуске контейнера
+EXPOSE 8000
+
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+#docker build . -t andreyson
+#docker run -p 8000:8000 -d --name name andreyson
