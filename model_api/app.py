@@ -6,7 +6,7 @@ from sklearn.linear_model import SGDRegressor
 
 
 
-app = FastAPI()
+app = FastAPI(debug=True)
 
 @app.post('/predict')
 async def predict(data: pd.DataFrame):
