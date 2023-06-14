@@ -4,7 +4,7 @@ pipeline {
         
         stage('Preparations') {
             steps {
-                sh 'mkdir temp_data'
+                // sh 'mkdir temp_data'
                 sh 'pip install gdown'
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
