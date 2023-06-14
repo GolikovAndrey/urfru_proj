@@ -1,16 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import gdown
-
-gdown.download(
-	id="10SEtiZHyxhboMkLEzPjUQ364-S6iTWlB",
-	output="./data/dataset.csv",
-	quiet=False
-)
 
 train = pd.read_csv('data/dataset.csv')
-train = train[train['Country'] == 'France']
-
 
 X_train, X_val, y_train, y_val = train_test_split(
     train[['year', 'code', 'id', 'period']], 
