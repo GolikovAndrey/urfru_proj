@@ -9,7 +9,9 @@ pipeline {
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
                 sh 'pip install dvc'
-                sh 'dvc pull -r datawarehouse'                
+                sh 'dvc remote modify datawarehouse gdrive_client_id ${GDRIVE_CLIENT_ID}'
+                sh 'dvc remote modify myremote gdrive_client_secret ${GDRIVE_CLIENT_SECRET}'           
+                sh 'dvc pull -r datawarehouse'
             }
         }
         
