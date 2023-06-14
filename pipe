@@ -8,7 +8,8 @@ pipeline {
                 sh 'pip install gdown'
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
-                
+                sh 'pip install dvc'
+                sh 'dvc pull -r datawarehouse'                
             }
         }
         
