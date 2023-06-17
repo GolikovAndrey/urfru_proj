@@ -2,3 +2,6 @@
     url = gdrive://1KMUiNOt24FH8eqbZ_ZPRq1PFHQ6FvbwV
     gdrive_client_id = 864906983952-hqd6ia9bp6ueveus5ka0m2se4vobrumr.apps.googleusercontent.com
     gdrive_client_secret = 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
+
+    [remote "storage"]
+    url = gdrive://1KMUiNOt24FH8eqbZ_ZPRq1PFHQ6FvbwV
