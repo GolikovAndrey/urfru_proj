@@ -9,7 +9,7 @@ pipeline {
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
                 sh 'pip install dvc'       
-                sh 'dvc pull -r datawarehouse'
+                sh 'dvc pull -r drive'
             }
         }
         
