@@ -3,21 +3,9 @@ import pandas as pd
 import streamlit as st
 from sklearn.metrics import r2_score
 
-import os
 
-def list_files(startpath):
-    for root, dirs, files in os.walk(startpath):
-        level = root.replace(startpath, '').count(os.sep)
-        indent = ' ' * 4 * (level)
-        print('{}{}/'.format(indent, os.path.basename(root)))
-        subindent = ' ' * 4 * (level + 1)
-        for f in files:
-            print('{}{}'.format(subindent, f))
-
-list_files('/')
-
-val = pd.read_csv('/temp_data/val.csv')
-y_val = pd.read_csv('/temp_data/y_val.csv')
+val = pd.read_csv('./temp_data/val.csv')
+y_val = pd.read_csv('./temp_data/y_val.csv')
 
 with open('pickle_model.pkl', 'rb') as file:
     model = pickle.load(file)
