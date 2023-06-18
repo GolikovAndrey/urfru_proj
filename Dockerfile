@@ -18,3 +18,7 @@ RUN pip install --no-cache-dir -r req.txt
 
 # Скопируйте оставшиеся файлы проекта
 COPY /model_deployment.py model_deployment.py
+
+EXPOSE 8501
+
+ENTRYPOINT ["streamlit", "run", "model_deployment.py", "--server.port=8501", "--server.address=0.0.0.0"]
