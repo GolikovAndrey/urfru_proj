@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r req.txt
 # Скопируйте оставшиеся файлы проекта
 COPY /model_deployment.py model_deployment.py
 COPY /temp_data temp_data
+COPY /pickle_model.pkl pickle_model.pkl
 
 EXPOSE 8501
 
