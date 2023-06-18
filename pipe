@@ -8,7 +8,7 @@ pipeline {
                 sh 'pip install gdown'
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
-                sh 'pip install dvc'       
+                sh 'pip install dvc[s3]'       
                 sh 'dvc pull -r s3cloud'
             }
         }
