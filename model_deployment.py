@@ -7,7 +7,7 @@ from sklearn.metrics import r2_score
 val = pd.read_csv('./temp_data/val.csv')
 y_val = pd.read_csv('./temp_data/y_val.csv')
 
-with open('pickle_model.pkl', 'rb') as file:
+with open('./pickle_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 st.title("Streamlit приложение для предсказания")
