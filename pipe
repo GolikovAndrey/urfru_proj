@@ -42,7 +42,7 @@ pipeline {
         stage('Run Container') {
             steps{
                 sh 'sudo docker build . -t strm:latest'
-                sh 'sudo docker run strm:latest -p 80:80'
+                sh 'sudo docker run strm:latest -p 8501:8501'
             }
         }
 
