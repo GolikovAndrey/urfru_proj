@@ -35,7 +35,7 @@ pipeline {
             steps {
                 sh 'python -m unittest test_model.py'
             }
-            
+
             post {
                 always {
                     junit 'test-reports/**/*.xml'

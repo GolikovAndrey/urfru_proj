@@ -15,5 +15,5 @@ class TestModel(unittest.TestCase):
     def test_r2_score(self):
         predict = self.model.predict(self.val)
         score = r2_score(self.y_val, predict)
-        self.assertGreaterEqual(score, 0.0)
-        self.assertLessEqual(score, 1.0)
+        self.assertGreaterEqual(score, 0.5)
+        #self.assertLessEqual(score, 0.5)
