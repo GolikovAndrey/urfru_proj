@@ -30,6 +30,18 @@ pipeline {
                 sh 'python3 model_learning.py'
             }
         }
+
+        stage('Test') {
+            steps {
+                sh 'python -m unittest test_model.py'
+            }
+            
+            post {
+                always {
+                    junit 'test-reports/**/*.xml'
+                }
+            }
+        }
         
         stage('Predict') {
             steps {
