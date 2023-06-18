@@ -42,9 +42,9 @@ pipeline {
         stage('Run Container') {
             steps{
                 sh 'sudo docker build -f ./Dockerfile_nginx -t my-nginx .'
-                sh 'sudo docker run --name my-nginx-container -p 80:80 -d my-nginx'
                 sh 'sudo docker build -f ./Dockerfile -t strm:latest .'
-                sh 'sudo docker run strm:latest -p 8501:8501'
+                sh 'sudo docker run -p 80:80 -d my-nginx'
+                sh 'sudo docker run -p 8501:8501 -d strm:latest'
             }
         }
 
@@ -54,10 +54,6 @@ pipeline {
         //     }
         // }
         
-        stage('Delete Temporary Data') {
-            steps {
-               sh 'rm -rf temp_data'
-            }
-        }
+
     }
 }
