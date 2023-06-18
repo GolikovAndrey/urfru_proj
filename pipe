@@ -41,9 +41,9 @@ pipeline {
         
         stage('Run Container') {
             steps{
-                sh 'sudo docker build -f ./Dockerfile_nginx -t my-nginx'
+                sh 'sudo docker build -f ./Dockerfile_nginx -t my-nginx .'
                 sh 'sudo docker run --name my-nginx-container --network my-network -p 80:80 -d my-nginx'
-                sh 'sudo docker build -f ./Dockerfile -t strm:latest'
+                sh 'sudo docker build -f ./Dockerfile -t strm:latest .'
                 sh 'sudo docker run strm:latest -p 8501:8501'
             }
         }
