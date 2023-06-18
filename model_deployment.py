@@ -3,8 +3,8 @@ import pandas as pd
 import streamlit as st
 from sklearn.metrics import r2_score
 
-val = pd.read_csv('temp_data/val.csv')
-y_val = pd.read_csv('temp_data/y_val.csv')
+val = pd.read_csv('/temp_data/val.csv')
+y_val = pd.read_csv('/temp_data/y_val.csv')
 
 with open('pickle_model.pkl', 'rb') as file:
     model = pickle.load(file)
