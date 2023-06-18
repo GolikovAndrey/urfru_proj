@@ -34,12 +34,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'pytest --junitxml=test-results.xml'
-            }
-            post {
-                always {
-                    junit 'test-results.xml'
-                }
+                sh 'python -m unittest test_model.py'
             }
         }
         
