@@ -18,6 +18,3 @@ RUN pip install --no-cache-dir -r req.txt
 
 # Скопируйте оставшиеся файлы проекта
 COPY /model_deployment.py model_deployment.py
-
-
-RUN streamlit run model_deployment.py
