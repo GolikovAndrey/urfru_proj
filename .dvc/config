@@ -1,2 +1,7 @@
 [core]
     autostage = true
+['remote "s3cloud"']
+    url = s3://mlops-final
+    endpointurl = https://storage.yandexcloud.net
+    access_key_id = YCAJEWVbjcbQ8-pRGW-7W3iJ5
+    secret_access_key = YCPfKM-8vTDbWan7AOL69RsdZi62PUWAvcd81h--
