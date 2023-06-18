@@ -9,7 +9,7 @@ pipeline {
                 sh 'pip install pandas'
                 sh 'pip install dvc[s3]'       
                 sh 'dvc pull -r s3cloud'
-                sh 'mkdir temp_data'
+                sh 'mkdir -p temp_data'
             }
         }
         
