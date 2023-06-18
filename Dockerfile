@@ -20,4 +20,3 @@ RUN pip install --no-cache-dir -r req.txt
 COPY /model_deployment.py model_deployment.py
 
 RUN streamlit run model_deployment.py
-

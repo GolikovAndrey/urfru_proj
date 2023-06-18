@@ -13,6 +13,7 @@ pipeline {
                 sh 'mkdir -p temp_data'
             }
         }
+
         
         stage('Data Creation') {
             steps {
@@ -38,11 +39,18 @@ pipeline {
             }
         }
         
-        stage('Predict') {
-            steps {
-               sh 'python3 model_deployment.py'
+        stage('Run Container') {
+            steps{
+                sh 'docker build . -t strm:latest'
+                sh 'docker run strm:latest -p 80:80'
             }
         }
+
+        // stage('Predict') {
+        //     steps {
+        //        sh 'python3 model_deployment.py'
+        //     }
+        // }
         
         stage('Delete Temporary Data') {
             steps {
