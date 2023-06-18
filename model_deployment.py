@@ -5,7 +5,7 @@ from sklearn.metrics import r2_score
 
 import os
 
-def list_files('/'):
+def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
         level = root.replace(startpath, '').count(os.sep)
         indent = ' ' * 4 * (level)
@@ -14,6 +14,7 @@ def list_files('/'):
         for f in files:
             print('{}{}'.format(subindent, f))
 
+list_files('/')
 
 val = pd.read_csv('/temp_data/val.csv')
 y_val = pd.read_csv('/temp_data/y_val.csv')
