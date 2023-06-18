@@ -54,10 +54,6 @@ pipeline {
         //     }
         // }
         
-        stage('Delete Temporary Data') {
-            steps {
-               sh 'rm -rf temp_data'
-            }
-        }
+
     }
 }
