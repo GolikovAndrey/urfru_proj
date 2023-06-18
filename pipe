@@ -4,12 +4,12 @@ pipeline {
         
         stage('Preparations') {
             steps {
-                // sh 'mkdir temp_data'
                 sh 'pip install gdown'
                 sh 'pip install scikit-learn'
                 sh 'pip install pandas'
                 sh 'pip install dvc[s3]'       
                 sh 'dvc pull -r s3cloud'
+                sh 'mkdir temp_data'
             }
         }
         
