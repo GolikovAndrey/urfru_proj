@@ -1,0 +1,8 @@
+# Используйте официальный образ Nginx
+FROM nginx:latest
+
+# Копируйте свой файл конфигурации Nginx в контейнер
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Откройте порты, используемые Nginx
+EXPOSE 80 443
